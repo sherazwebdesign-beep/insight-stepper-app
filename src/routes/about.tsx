@@ -1,0 +1,5 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { StorySection, TrustStrip, ClosingSection } from '@/components/coaching-sections';
+import { siteMeta } from '@/lib/site-meta';
+export const Route = createFileRoute('/about')({ head: () => siteMeta('Meet Lucy Remington', 'Meet Lucy, an ICF Professional Certified Coach with 16+ years in corporate finance and a deeply human approach to meaningful change.'), component: AboutPage });
+function AboutPage() { return <><section className="page-intro"><div className="content-width"><span className="eyebrow">THE PERSON BEHIND LR</span><h1>A thinking partner.<br/><em>A space to be yourself.</em></h1><p>Corporate experience. Real-life understanding. A belief that the most meaningful change starts within.</p></div></section><StorySection full/><TrustStrip/><ClosingSection/></>; }

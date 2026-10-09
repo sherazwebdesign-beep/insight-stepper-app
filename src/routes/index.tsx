@@ -1,24 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from '@tanstack/react-router';
+import { useState } from 'react';
+import { ArrowRight, ArrowUpRight, Check, ShieldCheck, ArrowDown } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { useBooking } from '@/components/site-shell';
+import { TrustStrip, Introduction, ModelSection, ComparisonSection, StorySection, ProgrammeSection, ClosingSection } from '@/components/coaching-sections';
+import { siteMeta } from '@/lib/site-meta';
+import landscape from '@/assets/coastal-clarity.jpg';
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => siteMeta('Where clarity drives transformation', 'Helping professionals navigate life transitions, overcome self-doubt, and create meaningful, lasting change with Lucy Remington.'),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+  const book = useBooking();
+  const [topic, setTopic] = useState<string | undefined>();
+  return <><section className="hero"><img src={landscape} alt="An olive tree overlooking a peaceful coastal landscape" className="hero-image" width={1920} height={1024} fetchPriority="high"/><div className="content-width hero-content"><div className="reveal"><span className="eyebrow hero-eyebrow">LR TRANSFORMATIONAL COACHING · YOUR NEXT CHAPTER</span><h1>Where clarity drives<em>TRANSFORMATION</em></h1><p className="hero-description">Helping professionals navigate life transitions,<br className="hidden sm:block"/> overcome self-doubt, and create meaningful,<br className="hidden sm:block"/> lasting change.</p></div><div className="reveal reveal-delay"><div className="pain-selectors" aria-label="What brings you here?">{['Career Crossroads', 'Executive Burnout', 'Identity & Confidence Shift'].map(t => <Button key={t} variant="outline" className={topic === t ? 'selected' : ''} aria-pressed={topic === t} onClick={() => setTopic(topic === t ? undefined : t)}>{topic === t && <Check/>}{t}</Button>)}</div><div className="hero-actions"><Button onClick={() => book(topic)}>Book 30-Min Discovery Call <ArrowRight/></Button><Link to="/transform-model" className="text-link">Explore the journey <ArrowUpRight size={16}/></Link></div><span className="hero-note"><ShieldCheck size={12}/>Complimentary. Confidential. A conversation, not a commitment.</span></div></div><div className="hero-bottom"><span>SPACE TO PAUSE. ROOM TO GROW.</span><span><ArrowDown size={14}/></span></div></section><TrustStrip/><Introduction/><ModelSection/><ComparisonSection/><StorySection/><ProgrammeSection/><ClosingSection/></>;
 }
