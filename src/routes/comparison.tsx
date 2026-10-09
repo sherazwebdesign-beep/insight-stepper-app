@@ -1,0 +1,5 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { ComparisonSection, ClosingSection } from '@/components/coaching-sections';
+import { siteMeta } from '@/lib/site-meta';
+export const Route = createFileRoute('/comparison')({ head: () => siteMeta('Is transformational coaching right for you?', 'Understand how transformational coaching differs from therapy, mentoring, and business coaching, and find the right support for you.'), component: ComparisonPage });
+function ComparisonPage() { return <><section className="page-intro"><div className="content-width"><span className="eyebrow">FIND YOUR KIND OF SUPPORT</span><h1>Not more advice.<br/><em>More understanding.</em></h1><p>Support comes in many forms. Transformational coaching is a partnership that helps you discover your own answers and move toward a more aligned life.</p></div></section><ComparisonSection/><ClosingSection/></>; }

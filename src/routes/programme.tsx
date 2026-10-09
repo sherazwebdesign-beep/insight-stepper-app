@@ -1,0 +1,5 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { ProgrammeSection, ClosingSection } from '@/components/coaching-sections';
+import { siteMeta } from '@/lib/site-meta';
+export const Route = createFileRoute('/programme')({ head: () => siteMeta('Your six-month coaching journey', 'Six monthly one-to-one coaching sessions with ongoing support. £540 for the programme, £90 per session equivalent. Start with a complimentary discovery call.'), component: ProgrammePage });
+function ProgrammePage() { return <><section className="page-intro"><div className="content-width"><span className="eyebrow">THOUGHTFUL SUPPORT. MEANINGFUL CHANGE.</span><h1>Your next chapter.<br/><em>On your terms.</em></h1><p>Six months of space, reflection, and purposeful action. Support that meets you where you are — and helps you move toward what matters.</p></div></section><ProgrammeSection/><ClosingSection/></>; }

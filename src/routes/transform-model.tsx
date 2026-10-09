@@ -1,0 +1,5 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { ModelSection, ClosingSection } from '@/components/coaching-sections';
+import { siteMeta } from '@/lib/site-meta';
+export const Route = createFileRoute('/transform-model')({ head: () => siteMeta('The Transform Model™', 'Explore five stages of lasting change: Awareness, Vision, Mindset Shift, Aligned Action, and Sustainable Growth.'), component: ModelPage });
+function ModelPage() { return <><section className="page-intro"><div className="content-width"><span className="eyebrow">THE TRANSFORM MODEL™</span><h1>A path to clarity.<br/><em>A journey back to you.</em></h1><p>Lasting transformation isn’t about pushing harder. It’s about understanding yourself, choosing your direction, and growing with intention.</p></div></section><ModelSection full/><ClosingSection/></>; }
