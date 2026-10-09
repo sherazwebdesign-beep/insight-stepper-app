@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BookCallRouteImport } from './routes/book-call'
+import { Route as ComparisonRouteImport } from './routes/comparison'
+import { Route as ProgrammeRouteImport } from './routes/programme'
+import { Route as TransformModelRouteImport } from './routes/transform-model'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookCallRoute = BookCallRouteImport.update({
+  id: '/book-call',
+  path: '/book-call',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComparisonRoute = ComparisonRouteImport.update({
+  id: '/comparison',
+  path: '/comparison',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgrammeRoute = ProgrammeRouteImport.update({
+  id: '/programme',
+  path: '/programme',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TransformModelRoute = TransformModelRouteImport.update({
+  id: '/transform-model',
+  path: '/transform-model',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/book-call': typeof BookCallRoute
+  '/comparison': typeof ComparisonRoute
+  '/programme': typeof ProgrammeRoute
+  '/transform-model': typeof TransformModelRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/book-call': typeof BookCallRoute
+  '/comparison': typeof ComparisonRoute
+  '/programme': typeof ProgrammeRoute
+  '/transform-model': typeof TransformModelRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/book-call': typeof BookCallRoute
+  '/comparison': typeof ComparisonRoute
+  '/programme': typeof ProgrammeRoute
+  '/transform-model': typeof TransformModelRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/book-call'
+    | '/comparison'
+    | '/programme'
+    | '/transform-model'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/book-call'
+    | '/comparison'
+    | '/programme'
+    | '/transform-model'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/book-call'
+    | '/comparison'
+    | '/programme'
+    | '/transform-model'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BookCallRoute: typeof BookCallRoute
+  ComparisonRoute: typeof ComparisonRoute
+  ProgrammeRoute: typeof ProgrammeRoute
+  TransformModelRoute: typeof TransformModelRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book-call': {
+      id: '/book-call'
+      path: '/book-call'
+      fullPath: '/book-call'
+      preLoaderRoute: typeof BookCallRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparison': {
+      id: '/comparison'
+      path: '/comparison'
+      fullPath: '/comparison'
+      preLoaderRoute: typeof ComparisonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programme': {
+      id: '/programme'
+      path: '/programme'
+      fullPath: '/programme'
+      preLoaderRoute: typeof ProgrammeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/transform-model': {
+      id: '/transform-model'
+      path: '/transform-model'
+      fullPath: '/transform-model'
+      preLoaderRoute: typeof TransformModelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BookCallRoute: BookCallRoute,
+  ComparisonRoute: ComparisonRoute,
+  ProgrammeRoute: ProgrammeRoute,
+  TransformModelRoute: TransformModelRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
