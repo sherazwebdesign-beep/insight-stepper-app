@@ -1,9 +1,10 @@
 import { createContext, useContext, useState, type ReactNode, type FormEvent } from 'react';
 import { Link } from '@tanstack/react-router';
 import { useServerFn } from '@tanstack/react-start';
-import { ArrowRight, ArrowLeft, Check, Menu, X, Leaf, Clock, Video, ShieldCheck } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Check, Menu, X, Clock, Video, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import logo from '@/assets/original-logo.asset.json';
 import { bookingSchema } from '@/lib/booking-schema';
 import { submitBooking } from '@/lib/booking.functions';
 
@@ -12,7 +13,7 @@ export const useBooking = () => useContext(BookingContext);
 const topics = ['Career Crossroads', 'Executive Burnout', 'Identity & Confidence Shift', 'Something else'] as const;
 
 export function Brand() {
-  return <Link to="/" className="brand" aria-label="LR Transformational Coaching home"><span className="monogram">LR<span className="monogram-leaf"><Leaf size={17} strokeWidth={1} /></span></span><span className="brand-name">TRANSFORMATIONAL<span>COACHING</span></span></Link>;
+  return <Link to="/" className="brand" aria-label="LR Transformational Coaching home"><img className="brand-logo" src={logo.url} alt="LR Coaching — Transformational Coaching" width={840} height={400}/></Link>;
 }
 
 export function SiteShell({ children }: { children: ReactNode }) {
