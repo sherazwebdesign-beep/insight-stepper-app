@@ -231,7 +231,7 @@
 .stage-art img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:3px; animation:gentle-in .5s ease both; }
 .leadership-section { border-top:1px solid var(--border); }
 .leadership-grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:80px; align-items:center; }
-.leadership-grid > img { width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center 24%; border-radius:3px; }
+.leadership-grid > img { width:100%; aspect-ratio:1/2; max-height:640px; object-fit:contain; border-radius:3px; }
 .leadership-copy h2 { margin-block:18px 24px; }
 .leadership-copy p { font-size:16px; margin-bottom:18px; }
 .leadership-copy button { margin-top:10px; white-space:normal; height:auto; min-height:44px; text-align:left; }
@@ -243,7 +243,7 @@
  .brand-logo { width:165px; height:79px; }
  .header-inner { padding-block:8px; }
  .leadership-grid { grid-template-columns:1fr; gap:30px; }
- .leadership-grid > img { max-width:470px; aspect-ratio:4/5; }
+ .leadership-grid > img { max-width:470px; max-height:600px; aspect-ratio:1/2; }
  .leadership-copy h2 { font-size:37px; }
  .stage-art { margin-top:20px; gap:12px; }
  .stage-art img { max-height:300px; }
