@@ -11,4 +11,5 @@
 
 - Keep shared site navigation and discovery-call dialog in a site shell around the root Outlet, so every public page has consistent navigation and booking access.
 - Reuse coaching content sections across the home page and dedicated content routes, so stage descriptions and programme details stay consistent.
+- Keep leadership photography and copy in a shared coaching section and stage imagery within the existing model panel, so page layouts and stage controls stay consistent.
 - Submit discovery requests through a validated public server function into a service-role-only table with database-backed request throttling; visitors must never read personal submissions.
