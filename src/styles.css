@@ -226,7 +226,7 @@
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; } }
 
 /* Original brand photography and comfortable reading sizes. */
-.brand-logo { width:195px; height:93px; object-fit:contain; }
+.brand-logo { width:172px; height:auto; object-fit:contain; }
 .header-inner { padding-block:12px; }
 .stage-art img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:3px; animation:gentle-in .5s ease both; }
 .leadership-section { border-top:1px solid var(--border); }
@@ -240,7 +240,7 @@
 .closing-section::after { content:''; position:absolute; inset:0; background:color-mix(in oklab,var(--background) 86%,transparent); }
 .closing-section > .content-width { position:relative; z-index:1; }
 @media (max-width:760px) {
- .brand-logo { width:165px; height:79px; }
+ .brand-logo { width:140px; }
  .header-inner { padding-block:8px; }
  .leadership-grid { grid-template-columns:1fr; gap:30px; }
  .leadership-grid > img { max-width:470px; max-height:600px; aspect-ratio:1/2; }
