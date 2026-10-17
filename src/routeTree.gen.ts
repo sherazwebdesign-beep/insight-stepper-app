@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as BookCallRouteImport } from './routes/book-call'
 import { Route as ComparisonRouteImport } from './routes/comparison'
 import { Route as ProgrammeRouteImport } from './routes/programme'
@@ -19,11 +18,6 @@ import { Route as TransformModelRouteImport } from './routes/transform-model'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BookCallRoute = BookCallRouteImport.update({
@@ -49,7 +43,6 @@ const TransformModelRoute = TransformModelRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/book-call': typeof BookCallRoute
   '/comparison': typeof ComparisonRoute
   '/programme': typeof ProgrammeRoute
@@ -57,7 +50,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/book-call': typeof BookCallRoute
   '/comparison': typeof ComparisonRoute
   '/programme': typeof ProgrammeRoute
@@ -66,7 +58,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/book-call': typeof BookCallRoute
   '/comparison': typeof ComparisonRoute
   '/programme': typeof ProgrammeRoute
@@ -75,24 +66,12 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
-    | '/about'
-    | '/book-call'
-    | '/comparison'
-    | '/programme'
-    | '/transform-model'
+    '/' | '/book-call' | '/comparison' | '/programme' | '/transform-model'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/book-call'
-    | '/comparison'
-    | '/programme'
-    | '/transform-model'
+  to: '/' | '/book-call' | '/comparison' | '/programme' | '/transform-model'
   id:
     | '__root__'
     | '/'
-    | '/about'
     | '/book-call'
     | '/comparison'
     | '/programme'
@@ -101,7 +80,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
   BookCallRoute: typeof BookCallRoute
   ComparisonRoute: typeof ComparisonRoute
   ProgrammeRoute: typeof ProgrammeRoute
@@ -115,13 +93,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/book-call': {
@@ -157,7 +128,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
   BookCallRoute: BookCallRoute,
   ComparisonRoute: ComparisonRoute,
   ProgrammeRoute: ProgrammeRoute,
