@@ -250,3 +250,4 @@
  .hero-description { max-width:340px; }
  .hero-note { max-width:310px; align-items:flex-start; }
 }
+.leadership-grid.no-image { grid-template-columns:1fr; max-width:820px; }
