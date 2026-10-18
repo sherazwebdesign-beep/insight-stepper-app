@@ -11,8 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BookCallRouteImport } from './routes/book-call'
+import { Route as CoachRouteImport } from './routes/coach'
 import { Route as ComparisonRouteImport } from './routes/comparison'
 import { Route as ProgrammeRouteImport } from './routes/programme'
+import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as TransformModelRouteImport } from './routes/transform-model'
 
 const IndexRoute = IndexRouteImport.update({
@@ -25,6 +27,11 @@ const BookCallRoute = BookCallRouteImport.update({
   path: '/book-call',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CoachRoute = CoachRouteImport.update({
+  id: '/coach',
+  path: '/coach',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ComparisonRoute = ComparisonRouteImport.update({
   id: '/comparison',
   path: '/comparison',
@@ -33,6 +40,11 @@ const ComparisonRoute = ComparisonRouteImport.update({
 const ProgrammeRoute = ProgrammeRouteImport.update({
   id: '/programme',
   path: '/programme',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TestimonialsRoute = TestimonialsRouteImport.update({
+  id: '/testimonials',
+  path: '/testimonials',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TransformModelRoute = TransformModelRouteImport.update({
@@ -44,45 +56,68 @@ const TransformModelRoute = TransformModelRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/book-call': typeof BookCallRoute
+  '/coach': typeof CoachRoute
   '/comparison': typeof ComparisonRoute
   '/programme': typeof ProgrammeRoute
+  '/testimonials': typeof TestimonialsRoute
   '/transform-model': typeof TransformModelRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/book-call': typeof BookCallRoute
+  '/coach': typeof CoachRoute
   '/comparison': typeof ComparisonRoute
   '/programme': typeof ProgrammeRoute
+  '/testimonials': typeof TestimonialsRoute
   '/transform-model': typeof TransformModelRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/book-call': typeof BookCallRoute
+  '/coach': typeof CoachRoute
   '/comparison': typeof ComparisonRoute
   '/programme': typeof ProgrammeRoute
+  '/testimonials': typeof TestimonialsRoute
   '/transform-model': typeof TransformModelRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/book-call' | '/comparison' | '/programme' | '/transform-model'
+    | '/'
+    | '/book-call'
+    | '/coach'
+    | '/comparison'
+    | '/programme'
+    | '/testimonials'
+    | '/transform-model'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/book-call' | '/comparison' | '/programme' | '/transform-model'
+  to:
+    | '/'
+    | '/book-call'
+    | '/coach'
+    | '/comparison'
+    | '/programme'
+    | '/testimonials'
+    | '/transform-model'
   id:
     | '__root__'
     | '/'
     | '/book-call'
+    | '/coach'
     | '/comparison'
     | '/programme'
+    | '/testimonials'
     | '/transform-model'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BookCallRoute: typeof BookCallRoute
+  CoachRoute: typeof CoachRoute
   ComparisonRoute: typeof ComparisonRoute
   ProgrammeRoute: typeof ProgrammeRoute
+  TestimonialsRoute: typeof TestimonialsRoute
   TransformModelRoute: typeof TransformModelRoute
 }
 
@@ -102,6 +137,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BookCallRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/coach': {
+      id: '/coach'
+      path: '/coach'
+      fullPath: '/coach'
+      preLoaderRoute: typeof CoachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/comparison': {
       id: '/comparison'
       path: '/comparison'
@@ -114,6 +156,13 @@ declare module '@tanstack/react-router' {
       path: '/programme'
       fullPath: '/programme'
       preLoaderRoute: typeof ProgrammeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/testimonials': {
+      id: '/testimonials'
+      path: '/testimonials'
+      fullPath: '/testimonials'
+      preLoaderRoute: typeof TestimonialsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/transform-model': {
@@ -129,8 +178,10 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BookCallRoute: BookCallRoute,
+  CoachRoute: CoachRoute,
   ComparisonRoute: ComparisonRoute,
   ProgrammeRoute: ProgrammeRoute,
+  TestimonialsRoute: TestimonialsRoute,
   TransformModelRoute: TransformModelRoute,
 }
 export const routeTree = rootRouteImport
