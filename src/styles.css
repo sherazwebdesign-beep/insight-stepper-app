@@ -251,3 +251,84 @@
  .hero-note { max-width:310px; align-items:flex-start; }
 }
 .leadership-grid.no-image { grid-template-columns:1fr; max-width:820px; }
+
+/* ===== Hero matched to Demo 2 (Image 1): larger type, darker text, stronger contrast, calmer layout ===== */
+#listen { scroll-margin-top: 12px; }
+.hero::after { background:linear-gradient(color-mix(in oklab,var(--background) 58%,transparent),color-mix(in oklab,var(--background) 58%,transparent)); }
+.hero-eyebrow { color:#141410; font-size:13px; letter-spacing:.03em; }
+.hero-eyebrow::before { display:none; }
+.hero h1 { color:#111110; }
+.hero-description { color:#141410; font-size:19px; line-height:1.65; max-width:560px; }
+.pain-selectors { flex-wrap:wrap; gap:12px; }
+.pain-selectors button { height:46px; padding:0 24px; font-size:15px; border:2px solid #141410; color:#141410; background:transparent; }
+.pain-selectors button.selected { background:var(--accent); }
+.hero-actions > button { height:58px; padding-inline:30px; font-size:17px; }
+.hero .text-link { border-bottom:0; font-size:17px; }
+@media (max-width:760px) {
+ .hero-eyebrow { font-size:12px; }
+ .hero h1 { font-size:clamp(32px,9.6vw,40px); line-height:1.12; max-width:none; }
+ .hero h1 em { font-size:clamp(32px,9.6vw,40px); margin-top:2px; }
+ .hero-description { font-size:17px; line-height:1.55; max-width:none; }
+ .pain-selectors { max-width:none; }
+ .pain-selectors button { height:44px; font-size:14px; padding:0 20px; }
+ .hero-actions > button { height:56px; font-size:16px; }
+ .mobile-menu { width:52px; height:52px; }
+ .mobile-menu svg { width:36px; height:36px; stroke-width:2.2; }
+}
+
+/* ===== Stage image panel (text-only fallback when a stage has no photo) ===== */
+.stage-art-text { width:100%; aspect-ratio:4/3; border-radius:3px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; background:var(--accent); color:var(--primary); text-align:center; padding:24px; }
+.stage-art-text span { font-size:11px; letter-spacing:.08em; color:var(--primary); }
+
+/* ===== Insights & Testimonials ===== */
+.expect-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.expect-card { padding:28px; border:1px solid var(--border); border-radius:6px; background:var(--card); display:grid; gap:14px; }
+.expect-card span { font-family:var(--font-display); font-size:30px; color:var(--primary); line-height:1; }
+.expect-card p { font-size:17px; }
+.testimonial-placeholder { display:grid; justify-items:center; gap:14px; text-align:center; padding:56px 24px; border:1px dashed var(--sage); border-radius:6px; background:var(--linen); color:var(--primary); }
+.testimonial-placeholder h2 { font-size:38px; color:var(--foreground); }
+.testimonial-placeholder p { color:var(--muted-foreground); font-size:16px; }
+
+/* ===== Wix-style booking demo ===== */
+.booking-wide { max-width:720px; }
+.booking-summary { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; padding:14px 16px; background:var(--linen); border:1px solid var(--border); border-radius:5px; margin-bottom:18px; font-size:13px; }
+.booking-summary strong { display:block; font-weight:500; }
+.booking-summary span { display:flex; align-items:center; gap:6px; flex-wrap:wrap; font-size:11px; color:var(--muted-foreground); margin-top:4px; }
+.booking-summary > b { font-family:var(--font-display); font-size:24px; font-weight:400; }
+.service-list { display:grid; gap:14px; }
+.service-card { display:flex; justify-content:space-between; gap:20px; padding:20px 22px; border:1px solid var(--border); border-radius:6px; background:var(--card); }
+.service-card h3 { font-size:24px; margin:0 0 8px; }
+.service-card p { font-size:14px; color:var(--muted-foreground); }
+.service-meta { display:flex; align-items:center; gap:6px; flex-wrap:wrap; font-size:11px; margin-top:10px; }
+.service-side { display:flex; flex-direction:column; align-items:flex-end; justify-content:space-between; gap:12px; }
+.service-side b { font-family:var(--font-display); font-size:28px; font-weight:400; }
+.service-side button { height:40px; font-size:11px; white-space:nowrap; box-shadow:none; }
+.time-layout { display:grid; grid-template-columns:auto 1fr; gap:26px; align-items:start; margin-bottom:6px; }
+.calendar-wrap { border:1px solid var(--border); border-radius:6px; background:var(--card); }
+.booking-calendar { background:transparent !important; }
+.slot-date { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:500; margin-bottom:14px; }
+.slot-list { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-bottom:14px; }
+.slot-list button { height:40px; font-size:12px; box-shadow:none; }
+.booking-chosen { display:flex; align-items:center; gap:8px; font-size:13px; padding:10px 14px; background:var(--linen); border-radius:5px; margin-bottom:20px; }
+.field-label-title { font-size:12px; font-weight:500; margin-bottom:10px; }
+.topic-chips { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; }
+.topic-chips button { height:36px; font-size:11px; background:transparent; box-shadow:none; border-radius:20px; }
+.field-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.demo-banner { display:flex; align-items:flex-start; gap:8px; padding:11px 14px; background:var(--accent); border-radius:5px; font-size:12px; margin-bottom:20px; }
+.demo-banner svg { flex-shrink:0; margin-top:2px; }
+.plan-options { display:grid; gap:9px; margin-bottom:20px; }
+.plan-options button { justify-content:space-between; height:46px; font-size:12px; background:transparent; box-shadow:none; }
+.pay-method { display:flex; align-items:center; gap:9px; padding:12px 14px; border:1px solid var(--primary); border-radius:5px; background:var(--card); font-size:13px; margin-bottom:16px; }
+.order-summary { display:grid; grid-template-columns:1fr auto; gap:8px 16px; padding:16px 0 0; border-top:1px solid var(--border); margin-top:6px; font-size:13px; }
+.order-summary strong { font-weight:600; font-size:15px; }
+.confirm-card { display:grid; gap:10px; text-align:left; width:100%; padding:20px; border:1px solid var(--border); border-radius:6px; background:var(--card); font-size:14px; }
+.confirm-card span { display:flex; align-items:flex-start; gap:8px; }
+.confirm-card svg { flex-shrink:0; margin-top:4px; }
+@media (max-width:760px) {
+ .expect-grid { grid-template-columns:1fr; }
+ .time-layout { grid-template-columns:1fr; }
+ .calendar-wrap { justify-self:center; }
+ .field-row { grid-template-columns:1fr; gap:0; }
+ .service-card { flex-direction:column; }
+ .service-side { flex-direction:row; align-items:center; justify-content:space-between; width:100%; }
+}

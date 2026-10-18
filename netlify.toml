@@ -1,0 +1,11 @@
+# Best-effort Netlify settings for this TanStack Start project (not yet verified with a real Netlify build).
+[build]
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # The Lovable config builds for Cloudflare by default; ask Nitro for Netlify instead.
+  NITRO_PRESET = "netlify"
+  # Photos imported from src/assets/*.asset.json are served by Lovable hosting. Until they are
+  # replaced with files in /public, load them from the published Lovable site.
+  VITE_ASSET_ORIGIN = "https://insight-stepper-app.lovable.app"
