@@ -1,6 +1,8 @@
 # Best-effort Netlify settings for this TanStack Start project (not yet verified with a real Netlify build).
 [build]
   command = "npm run build"
+  # Nitro's netlify preset writes static assets to dist/ (the server goes to .netlify/functions-internal).
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "22"
