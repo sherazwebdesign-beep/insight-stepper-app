@@ -39,7 +39,7 @@ export const services: Record<ServiceId, Service> = {
 
 export const serviceList: Service[] = [services.discovery, services.programme];
 
-export const topics = ['Career Crossroads', 'Executive Burnout', 'Identity & Confidence Shift', 'Something else'] as const;
+export const topics = ['Career Crossroads', 'Personal Development', 'Navigating Change', 'Identity & Confidence Shift', 'Finding Clarity and Direction', 'Something else'] as const;
 
 export const BOOKING_WINDOW_DAYS = 90;
 

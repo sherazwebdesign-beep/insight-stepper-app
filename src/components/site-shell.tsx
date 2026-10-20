@@ -4,8 +4,6 @@ import { ArrowRight, ArrowLeft, Check, Menu, X, Clock, Video, ShieldCheck, Lock,
 import { Button } from '@/components/ui/button';
 import { Calendar } from '@/components/ui/calendar';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import logo from '@/assets/lr-logo.png.asset.json';
-import { assetUrl } from '@/lib/asset-url';
 import { formatLongDate, isDateUnavailable, makeReference, serviceList, services, slotsFor, topics, type ServiceId } from '@/lib/booking-demo';
 
 /** `book('Career Crossroads')` preselects a focus; `book({ service: 'programme' })` opens the six-month journey. */
@@ -15,7 +13,7 @@ const BookingContext = createContext<(arg?: BookArg) => void>(() => {});
 export const useBooking = () => useContext(BookingContext);
 
 export function Brand() {
-  return <Link to="/" className="brand" aria-label="LR Transformational Coaching home"><img className="brand-logo" src={assetUrl(logo.url)} alt="LR Coaching — Transformational Coaching" width={573} height={342}/></Link>;
+  return <Link to="/" className="brand" aria-label="LR Transformational Coaching home"><span className="brand-mark" aria-hidden="true"><span className="brand-script">LR</span><span className="brand-caps">TRANSFORMATIONAL COACHING</span></span></Link>;
 }
 
 export function SiteShell({ children }: { children: ReactNode }) {

@@ -8,3 +8,4 @@
 - [x] Wix-style demo booking flow (service, date & time, details, payment, confirmation); demo only, real booking and payments will come from Wix.
 - [x] Stage images are editable in src/lib/stage-images.ts; the photo with white trousers was removed.
 - [x] Deploy fixed (publish dir `dist`); hero restored to Demo 2 (eyebrow rule, fine pills, reassurance note, scroll cue); Coach page titled "THE PERSON BEHIND LR".
+- [x] Client round 2: text logo (no extra "Coaching"), About tab trimmed to hero / Something feels different / Lead with clarity with 5 numbered pills, trust-strip wording, Coach heading and bio rewrite with surname, Transform Model "LIFE COACHING" heading and new comparison heading, larger first-line labels, five new stage infographics, scarf image restored behind the closing call to action.

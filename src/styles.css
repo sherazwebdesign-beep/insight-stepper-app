@@ -336,3 +336,48 @@
  .service-card { flex-direction:column; }
  .service-side { flex-direction:row; align-items:center; justify-content:space-between; width:100%; }
 }
+
+/* ===== Round 2 client changes ===== */
+
+/* Logo as text: script "LR" over TRANSFORMATIONAL COACHING (no separate "Coaching" line). */
+.brand-mark { display:grid; justify-items:center; line-height:1; }
+.brand-script { font-family:'Pinyon Script','Cormorant Garamond',cursive; font-size:58px; line-height:.95; color:var(--foreground); padding-inline:6px; }
+.brand-caps { font-family:var(--font-display); font-weight:600; font-size:10.5px; letter-spacing:.2em; color:var(--foreground); white-space:nowrap; margin-top:-1px; }
+@media (max-width:760px) {
+ .brand-script { font-size:46px; }
+ .brand-caps { font-size:8.5px; letter-spacing:.15em; }
+}
+
+/* First line of every page and section ("eyebrow") uses the same, larger size as the hero's. */
+.hero-eyebrow,
+.page-intro .eyebrow,
+.section-heading .eyebrow,
+.intro-section .eyebrow,
+.leadership-copy .eyebrow,
+.story-copy .eyebrow,
+.closing-section .eyebrow,
+.book-page .eyebrow,
+.booking-heading .eyebrow,
+.programme-label { font-size:13px; letter-spacing:.02em; }
+.programme-label svg { width:18px; height:18px; }
+/* "LIFE COACHING" opens the Transform Model page, larger still. */
+.page-intro .eyebrow.eyebrow-xl { font-size:22px; letter-spacing:.14em; }
+.page-intro .coach-lede { font-family:var(--font-display); font-style:italic; font-size:30px; line-height:1.25; color:var(--primary); max-width:640px; }
+@media (max-width:760px) {
+ .hero-eyebrow,
+ .page-intro .eyebrow,
+ .section-heading .eyebrow,
+ .intro-section .eyebrow,
+ .leadership-copy .eyebrow,
+ .story-copy .eyebrow,
+ .closing-section .eyebrow,
+ .book-page .eyebrow,
+ .booking-heading .eyebrow,
+ .programme-label { font-size:12px; }
+ .page-intro .eyebrow.eyebrow-xl { font-size:18px; }
+ .page-intro .coach-lede { font-size:24px; }
+}
+
+/* Stage images are full infographics: show them whole, never cropped. */
+.stage-art img { aspect-ratio:auto; height:auto; object-fit:contain; max-height:none; }
+@media (max-width:760px) { .stage-art img { max-height:none; } }
