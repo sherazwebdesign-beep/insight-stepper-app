@@ -339,15 +339,6 @@
 
 /* ===== Round 2 client changes ===== */
 
-/* Logo as text: script "LR" over TRANSFORMATIONAL COACHING (no separate "Coaching" line). */
-.brand-mark { display:grid; justify-items:center; line-height:1; }
-.brand-script { font-family:'Pinyon Script','Cormorant Garamond',cursive; font-size:58px; line-height:.95; color:var(--foreground); padding-inline:6px; }
-.brand-caps { font-family:var(--font-display); font-weight:600; font-size:10.5px; letter-spacing:.2em; color:var(--foreground); white-space:nowrap; margin-top:-1px; }
-@media (max-width:760px) {
- .brand-script { font-size:46px; }
- .brand-caps { font-size:8.5px; letter-spacing:.15em; }
-}
-
 /* First line of every page and section ("eyebrow") uses the same, larger size as the hero's. */
 .hero-eyebrow,
 .page-intro .eyebrow,
@@ -360,8 +351,6 @@
 .booking-heading .eyebrow,
 .programme-label { font-size:13px; letter-spacing:.02em; }
 .programme-label svg { width:18px; height:18px; }
-/* "LIFE COACHING" opens the Transform Model page, larger still. */
-.page-intro .eyebrow.eyebrow-xl { font-size:22px; letter-spacing:.14em; }
 .page-intro .coach-lede { font-family:var(--font-display); font-style:italic; font-size:30px; line-height:1.25; color:var(--primary); max-width:640px; }
 @media (max-width:760px) {
  .hero-eyebrow,
@@ -374,10 +363,50 @@
  .book-page .eyebrow,
  .booking-heading .eyebrow,
  .programme-label { font-size:12px; }
- .page-intro .eyebrow.eyebrow-xl { font-size:18px; }
  .page-intro .coach-lede { font-size:24px; }
 }
 
 /* Stage images are full infographics: show them whole, never cropped. */
 .stage-art img { aspect-ratio:auto; height:auto; object-fit:contain; max-height:none; }
 @media (max-width:760px) { .stage-art img { max-height:none; } }
+
+/* ===== Round 3 client changes ===== */
+
+/* Client's own logo (transparent PNG). */
+.brand-logo { width:196px; height:auto; }
+@media (max-width:760px) { .brand-logo { width:150px; } }
+
+/* "Something feels different": one full screen on its own, text stacked under the heading, so the
+   home pills 3-5 show only this section (same effect as "Lead with clarity"). */
+#listen { scroll-margin-top:0; }
+.intro-section { grid-template-columns:1fr; align-content:start; gap:34px; min-height:100svh; box-sizing:border-box; padding-block:92px 64px; }
+.intro-copy { padding-top:0; max-width:680px; font-size:18px; line-height:1.8; }
+.intro-copy p+p { margin-top:18px; }
+.intro-copy .text-link { margin-top:26px; }
+@media (max-width:760px) { .intro-section { gap:22px; padding-block:64px 48px; } .intro-copy { font-size:16px; } }
+
+/* Tighter spacing under page headings so the next heading is visible on a laptop screen. */
+.page-intro { padding-block:44px 32px; }
+.page-intro + .section { padding-top:36px; }
+.model-section.section { padding-bottom:44px; }
+.model-section + .page-intro { padding-top:30px; }
+.page-intro .coach-lede { margin-top:16px; }
+.page-intro .coach-lede + p { margin-top:14px; }
+@media (max-width:760px) {
+ .page-intro { padding-block:36px 26px; }
+ .page-intro + .section { padding-top:30px; }
+ .model-section.section { padding-bottom:36px; }
+}
+
+/* Bio paragraphs justified (like Word's "Justify"), with automatic hyphenation. */
+.story-copy > p { text-align:justify; text-justify:inter-word; hyphens:auto; -webkit-hyphens:auto; }
+
+/* Every stage image sits in the same square frame; the landscape ones are centred with a soft blurred
+   backdrop of themselves, so nothing is cropped and all five look the same size. */
+.stage-frame { position:relative; width:100%; aspect-ratio:1/1; overflow:hidden; border-radius:3px; background:var(--accent); isolation:isolate; }
+.stage-frame::before { content:''; position:absolute; inset:-12%; background:var(--stage-img) center/cover no-repeat; filter:blur(26px) saturate(1.05); z-index:-1; }
+.stage-frame img { position:relative; display:block; width:100%; height:100%; max-height:none; object-fit:contain; border-radius:0; }
+.stage-art-text { aspect-ratio:1/1; }
+
+/* Second payment button on the programme card. */
+.programme-grid .programme-secondary { margin-top:12px; background:transparent; }

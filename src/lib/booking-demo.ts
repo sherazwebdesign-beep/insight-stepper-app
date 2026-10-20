@@ -1,7 +1,7 @@
 // Demo-only data for the Wix-style booking flow. Nothing here talks to a server: the real
 // booking, availability and payments will be provided by Wix Bookings on the live site.
 
-export type ServiceId = 'discovery' | 'programme';
+export type ServiceId = 'discovery' | 'programme' | 'additional';
 
 export type Service = {
   id: ServiceId;
@@ -35,9 +35,19 @@ export const services: Record<ServiceId, Service> = {
     price: 540,
     priceLabel: '£540',
   },
+  additional: {
+    id: 'additional',
+    name: 'Additional Coaching Session',
+    summary: 'An extra 60-minute one-to-one coaching session, whenever you would like more support.',
+    duration: '60 min',
+    minutes: 60,
+    format: 'Online · one-to-one',
+    price: 95,
+    priceLabel: '£95',
+  },
 };
 
-export const serviceList: Service[] = [services.discovery, services.programme];
+export const serviceList: Service[] = [services.discovery, services.programme, services.additional];
 
 export const topics = ['Career Crossroads', 'Personal Development', 'Navigating Change', 'Identity & Confidence Shift', 'Finding Clarity and Direction', 'Something else'] as const;
 
@@ -61,7 +71,7 @@ export function isDateUnavailable(date: Date): boolean {
 /** A believable, repeatable set of open slots for a date (some are "already booked"). */
 export function slotsFor(date: Date, service: ServiceId): string[] {
   if (isDateUnavailable(date)) return [];
-  const base = service === 'programme'
+  const base = service !== 'discovery'
     ? ['09:00', '11:00', '13:00', '15:00', '17:00']
     : ['09:00', '09:30', '10:30', '12:00', '13:30', '15:00', '16:30', '18:00'];
   const seed = date.getDate() + date.getMonth() * 31;
