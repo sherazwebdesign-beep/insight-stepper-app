@@ -442,3 +442,9 @@
  .page-intro-tight { padding-block:30px 12px; }
  .page-intro-tight + .expect-section { padding-top:18px; }
 }
+
+/* Phone: the hero line wraps onto two lines, so the decorative rules are dropped there (kept on larger screens). */
+@media (max-width:760px) {
+ .hero-eyebrow::before,
+ .hero-eyebrow::after { content:none; display:none; }
+}
